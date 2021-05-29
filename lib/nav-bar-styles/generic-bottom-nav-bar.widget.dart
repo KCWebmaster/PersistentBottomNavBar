@@ -1,18 +1,18 @@
 part of persistent_bottom_nav_bar;
 
-class BottomNavStyleKC extends StatefulWidget {
+class BottomNavGeneric extends StatefulWidget {
   final NavBarEssentials? navBarEssentials;
 
-  BottomNavStyleKC({
+  BottomNavGeneric({
     Key? key,
     this.navBarEssentials = const NavBarEssentials(items: null),
   });
 
   @override
-  _BottomNavStyleKCState createState() => _BottomNavStyleKCState();
+  _BottomNavGenericState createState() => _BottomNavGenericState();
 }
 
-class _BottomNavStyleKCState extends State<BottomNavStyleKC> {
+class _BottomNavGenericState extends State<BottomNavGeneric> {
   int? _lastSelectedIndex;
   int? _selectedIndex;
 

@@ -1,7 +1,7 @@
 part of persistent_bottom_nav_bar;
 
 enum NavBarStyle {
-  styleKC,
+  generic,
   style1,
   style2,
   style3,
@@ -23,7 +23,10 @@ enum NavBarStyle {
   simple,
 }
 
-enum PopActionScreensType { once, all }
+///Once will navigate back once to the previous screen
+///All will pop all screens back to the root resulting in an animation
+///Replace will replace the stack with the root of the navigator without animation.
+enum PopActionScreensType { once, all, replace }
 
 class NavBarDecoration {
   ///Defines the curve radius of the corners of the NavBar.

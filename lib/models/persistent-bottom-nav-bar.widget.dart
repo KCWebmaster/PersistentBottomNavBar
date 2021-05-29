@@ -203,8 +203,8 @@ class PersistentBottomNavBar extends StatelessWidget {
       return customNavBarWidget;
     } else {
       switch (navBarStyle) {
-        case NavBarStyle.styleKC:
-          return BottomNavStyleKC(
+        case NavBarStyle.generic:
+          return BottomNavGeneric(
             navBarEssentials: this.navBarEssentials,
           );
         case NavBarStyle.style1:

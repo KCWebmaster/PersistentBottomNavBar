@@ -29,9 +29,8 @@ part 'utils/navigator-functions.utils.dart';
 //Animations
 part 'animations/animations.dart';
 
-
 //Styles
-part 'nav-bar-styles/style-kc-bottom-nav-bar.widget.dart';
+part 'nav-bar-styles/generic-bottom-nav-bar.widget.dart';
 part 'nav-bar-styles/style-1-bottom-nav-bar.widget.dart';
 part 'nav-bar-styles/style-2-bottom-nav-bar.widget.dart';
 part 'nav-bar-styles/style-3-bottom-nav-bar.widget.dart';

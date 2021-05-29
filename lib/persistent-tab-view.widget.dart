@@ -718,20 +718,24 @@ class _PersistentTabViewState extends State<PersistentTabView> {
           Navigator.of(_contextList[_controller!.index]!).pop(context);
           return;
         }
+      } else if (widget.popActionScreens == PopActionScreensType.replace) {
+        //Only pop the screen if the navigator is not at the root of the navigator.
+        var isRouteCurrent =
+            ModalRoute.of(_contextList[_controller!.index]!)!.isCurrent;
+        if (!isRouteCurrent) {
+          Navigator.pushNamedAndRemoveUntil(_contextList[_controller!.index]!,
+              '/', (Route<dynamic> r) => false);
+          //(Route<dynamic> r) => r.isFirst);
+        }
       } else {
-        /*Navigator.pushNamedAndRemoveUntil(_contextList[_controller!.index]!,
-            '/', (Route<dynamic> r) => false);*/
-        Navigator.pushNamedAndRemoveUntil(_contextList[_controller!.index]!,
-            '/', (Route<dynamic> r) => r.isFirst);
-
-        /* Navigator.popUntil(
+        Navigator.popUntil(
             _contextList[_controller!.index]!,
             ModalRoute.withName(widget.isCustomWidget!
                 ? (widget.routeAndNavigatorSettings?.initialRoute ??
                     '/9f580fc5-c252-45d0-af25-9429992db112')
                 : widget.items![_controller!.index].routeAndNavigatorSettings
                         .initialRoute ??
-                    '/9f580fc5-c252-45d0-af25-9429992db112'));*/
+                    '/9f580fc5-c252-45d0-af25-9429992db112'));
       }
     }
   }
